@@ -17,3 +17,6 @@ jsonl-gen sample.json
 2. Place the `jsonl-gen` file somewhere in your `PATH`.
 3. Flag the file as executable by running `chmod +x jsonl-gen`.
 4. Profit.
+
+## To-Do
+- Add buffer to file reading so that you can safely overwrite the file you're reading from, if you want to do that.
