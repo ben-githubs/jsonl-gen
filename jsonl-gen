@@ -1,0 +1,24 @@
+#! /usr/bin/env python3
+
+import json, sys
+
+def main(fname):
+    with open(fname, 'r') as f:
+        level = 0
+        object = ''
+        for line in f.readlines():
+            for char in line:
+                if char == '\n':
+                    continue
+                if char == '{':
+                    level += 1
+                elif char == '}':
+                    level -= 1
+                object += char
+                if level == 0:
+                    print(json.dumps(json.loads(object)))
+                    object = ''
+
+if __name__ == '__main__':
+    fname = sys.argv[1]
+    main(fname)
